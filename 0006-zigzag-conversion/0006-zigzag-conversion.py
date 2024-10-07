@@ -8,10 +8,6 @@ class Solution:
 
         for i, char in enumerate(s):
             l[seq[i % len(seq)]] += char
-        
-        ans = ""
-        for chars in l:
-            ans += chars
 
-        return ans
+        return "".join(l)
         
