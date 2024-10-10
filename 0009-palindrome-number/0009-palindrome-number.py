@@ -3,6 +3,10 @@ class Solution:
         if x < 0:
             return False
         
-        s = str(x)
+        l = list(str(x))
 
-        return s == s[::-1]
+        for i in range(len(l)//2):
+            if l[i] != l[-1*i - 1]:
+                return False
+
+        return True
