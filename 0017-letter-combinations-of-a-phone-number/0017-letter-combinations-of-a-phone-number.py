@@ -14,15 +14,15 @@ class Solution:
             "9": "wxyz",
         }
         answer = []
-        def dfs(target, i, comb):
-            if len(target) == i:
+        def dfs(i, comb):
+            if len(digits) == i:
                 answer.append(comb)
                 return
             
 
             for char in letters[digits[i]]:
-                dfs(target, i+1, comb + char)
+                dfs(i+1, comb + char)
 
-        dfs(digits, 0, "")
+        dfs(0, "")
 
         return answer
