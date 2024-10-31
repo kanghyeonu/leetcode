@@ -1,33 +1,22 @@
+import collections
 class Solution:
     def findSubstring(self, s: str, words: List[str]) -> List[int]:
         answer = []
-        
-        words_cnt = {}
-        for word in words:
-            if word in words_cnt:
-                words_cnt[word] += 1
-            else:
-                words_cnt[word] = 1
-
+        words_cnt = collections.Counter(words)
         n = len(words[0])
         words_length = len(words) * n
+        \
         for i in range(len(s) - words_length + 1):
-            copied = words_cnt.copy()
+            seen = collections.defaultdict(int)
             w = i
-            dup = ""
             while w < w + words_length:
                 word = s[w:w+n]
-                if not word in words_cnt:
-                    break
-
-                if copied[word] == 0:
-                    dup = word
-                    break
-            
-                copied[word] -= 1
+                seen[word] += 1
+                if seen[word] > words_cnt[word]:
+                    break            
                 w += n
 
-            if sum(copied.values()) == 0:
+            if i + words_length == w:
                 answer.append(i)        
   
         return answer
