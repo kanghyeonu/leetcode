@@ -16,4 +16,4 @@ class Solution:
             else:
                 right = mid - 1  
         
-        return right  # 오른쪽 경계가 최종적으로 제곱근을 내림한 값
+        return right 
