@@ -7,7 +7,6 @@ class Solution:
             if p == ".":
                 pass
             elif p == "..":
-                print(dq)
                 if len(dq) >= 1:
                     dq.pop()
                 continue
