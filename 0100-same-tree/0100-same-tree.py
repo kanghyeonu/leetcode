@@ -11,7 +11,7 @@ class Solution:
         def traversal(pr, qr):
             if pr is None and qr is None:
                 return True
-            
+            # xor
             if (pr is None and not qr is None) or (not pr is None and qr is None):
                 return False
 
