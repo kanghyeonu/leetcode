@@ -5,7 +5,7 @@ class Solution:
         words_cnt = collections.Counter(words)
         n = len(words[0])
         words_length = len(words) * n
-        \
+        
         for i in range(len(s) - words_length + 1):
             seen = collections.defaultdict(int)
             w = i
