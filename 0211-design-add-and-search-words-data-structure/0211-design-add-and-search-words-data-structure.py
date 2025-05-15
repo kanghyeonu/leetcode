@@ -24,14 +24,17 @@ class WordDictionary:
                 continue
             
             char = word[index]
+            # 현재 와일드 카드라면 다음 글자 전부 저장
             if char == ".":
                 for child in curr:
                     if child == "isEnd":
                         continue
                     stack.append((curr[child], index + 1))
+            # char 문자가 curr에서 연결된 다음 문자에 있다면
             elif char in curr:
                 next = curr[char]
-                stack.append((next, index+1))
+                stack.append((next, index+1
+                             
         return found
 
 
