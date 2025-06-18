@@ -9,7 +9,7 @@ class Solution:
                 return True
 
             elif matrix[i][0] < target:
-                values.update(matrix[i])
+                values = set(matrix[i])
             
             else:
                 return False
